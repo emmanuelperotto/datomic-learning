@@ -1,6 +1,6 @@
 # datomic-01
 
-A Clojure library designed to ... well, that part is up to you.
+Some code samples using datomic
 
 ## Usage
 
