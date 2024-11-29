@@ -1,0 +1,404 @@
+; This is the Calva REPL Window.
+; It's just a file, really, with some special treatment from Calva.
+; Use it as a REPL input prompt if you like. (When the REPL is connected.)
+; TIPS: The keyboard shortcut `ctrl+alt+o r` shows and focuses this window
+; Please see https://calva.io/repl-window/ for more info.
+; Happy coding! ♥️
+
+; TIPS: As with any Clojure file when the REPL is connected:
+; - `alt+enter` evaluates the current top level form.
+; - `ctrl+enter` evaluates the current form.
+; Special for this file:
+; - `alt+up` and `alt+down` traverse up and down the REPL command history
+;    when the cursor is after the last contents at the prompt
+; 
+; See also the Calva Inspector: https://calva.io/inspector/
+
+PLEASE NOTE
+We will update the default location of this file.
+The new default location will be
+  "<projectRootPath>/.calva/repl.calva-repl"
+For now the legacy path is used by default.
+To give yourself a smooth transition, you can opt in
+to the change, by configuring this setting as false:
+  "calva.useLegacyReplWindowPath"
+and then add "**/.calva/repl.calva-repl" to your ".gitignore" file.
+
+
+This file is configured as the output destination for all REPL output.
+You can configure this with the setting:
+  "calva.outputDestinations"
+
+
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in Terminal: (cd /Users/emmanuel.perotto/Documents/learning/alura/datomic-01; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
+; Using host:port 127.0.0.1:50264 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+; Execution error (FileNotFoundException) at datomic-01.query-and-pull/eval10038 (form-init5180380274665988183.clj:42).
+; Could not locate clojure/tools/namespace/repl__init.class, clojure/tools/namespace/repl.clj or clojure/tools/namespace/repl.cljc on classpath.
+clj꞉datomic-01.query-and-pull꞉> 
+"Please see https://calva.io/output/#about-stdout-in-the-repl-window
+about why stdout printed to this file is prepended with `;` to be line comments."
+clj꞉datomic-01.query-and-pull꞉> 
+; Jack-in done.
+clj꞉datomic-01.query-and-pull꞉> 
+; Evaluating file: seed.clj
+#<promise$settable_future$reify__12002@5eb06995: 
+  {:db-before datomic.db.Db@49a88d5e,
+   :db-after datomic.db.Db@a1662785,
+   :tx-data
+   [#datom[13194139534329 50 #inst "2024-05-06T01:22:23.287-00:00" 13194139534329 true] #datom[17592186045420 82 1 13194139534329 true] #datom[17592186045422 82 1 13194139534329 true] #datom[17592186045425 82 1 13194139534329 true] #datom[17592186045426 82 1 13194139534329 true]],
+   :tempids
+   {-9223300668110598103 17592186045420,
+    -9223300668110598102 17592186045422,
+    -9223300668110598101 17592186045425,
+    -9223300668110598100 17592186045426}}>
+clj꞉datomic-01.seed꞉> 
+#'datomic-01.filters-and-as-of/conn
+clj꞉datomic-01.filters-and-as-of꞉> 
+[]
+clj꞉datomic-01.filters-and-as-of꞉> 
+[[{:product/id #uuid "b4f5da9f-0c9c-49ae-aef2-f866219707fd",
+   :product/visualizations 1,
+   :product/price 1000M,
+   :product/stock 10,
+   :product/category #:db{:id 17592186045421},
+   :product/slug "computer",
+   :product/tags ["gaming" "work"],
+   :db/id 17592186045420,
+   :product/name "Computer"}]
+ [{:product/id #uuid "671aaf25-2494-498f-a55e-bf2a8afab239",
+   :product/visualizations 1,
+   :product/price 100M,
+   :product/stock 5,
+   :product/category #:db{:id 17592186045423},
+   :product/slug "t-shirt",
+   :product/tags ["casual" "gym" "workout"],
+   :db/id 17592186045422,
+   :product/name "T-shirt"}]
+ [{:product/id #uuid "a24f1432-04ff-4947-b281-3708a047193e",
+   :product/visualizations 1,
+   :product/price 1000M,
+   :product/stock 7,
+   :product/category #:db{:id 17592186045421},
+   :product/slug "tablet",
+   :product/tags ["communication" "gaming" "work"],
+   :db/id 17592186045425,
+   :product/name "Tablet"}]
+ [{:product/id #uuid "d97af50b-5957-4347-86f6-f0b0701bf29f",
+   :product/visualizations 1,
+   :product/price 2800M,
+   :product/stock 8,
+   :product/category #:db{:id 17592186045423},
+   :product/slug "smartwatch",
+   :product/tags ["gym" "health" "workout"],
+   :db/id 17592186045426,
+   :product/name "Smartwatch"}]
+ [{:product/id #uuid "450dcec9-5d8b-43af-a5cb-e1c16f936174",
+   :product/variations
+   [{:db/id 17592186045430,
+     :variation/id #uuid "a05a8cd4-ba0d-4dbb-b843-1696bb03e47a",
+     :variation/name "Plus",
+     :variation/price 1500M}],
+   :product/price 600M,
+   :product/stock 8,
+   :product/category #:db{:id 17592186045421},
+   :product/slug "iphone",
+   :product/tags ["communication" "gaming" "gym" "health" "work" "workout"],
+   :db/id 17592186045431,
+   :product/name "iPhone"}]]
+clj꞉datomic-01.filters-and-as-of꞉> 
+[[{:db/id 17592186045427,
+   :order/id #uuid "0f8ef716-f99c-464f-a210-a397f4d04efd",
+   :order/product #:db{:id 17592186045420},
+   :order/quantity 3}]]
+clj꞉datomic-01.filters-and-as-of꞉> 
+[[{:db/id 17592186045427,
+   :order/id #uuid "0f8ef716-f99c-464f-a210-a397f4d04efd",
+   :order/product #:db{:id 17592186045420},
+   :order/quantity 3}]]
+clj꞉datomic-01.filters-and-as-of꞉> 
+[[{:db/id 17592186045427,
+   :order/id #uuid "0f8ef716-f99c-464f-a210-a397f4d04efd",
+   :order/product #:db{:id 17592186045420},
+   :order/quantity 3}
+  1000M]]
+clj꞉datomic-01.filters-and-as-of꞉> 
+[[{:db/id 17592186045427,
+   :order/id #uuid "0f8ef716-f99c-464f-a210-a397f4d04efd",
+   :order/product #:db{:id 17592186045420},
+   :order/quantity 3}
+  1000M
+  3]]
+clj꞉datomic-01.filters-and-as-of꞉> 
+#{[3000M]}
+clj꞉datomic-01.filters-and-as-of꞉> 
+3000M
+clj꞉datomic-01.filters-and-as-of꞉> 
+13194139534320
+clj꞉datomic-01.filters-and-as-of꞉> 
+13194139534320
+clj꞉datomic-01.filters-and-as-of꞉> 
+13194139534320
+clj꞉datomic-01.filters-and-as-of꞉> 
+3000M
+clj꞉datomic-01.filters-and-as-of꞉> 
+3000M
+clj꞉datomic-01.filters-and-as-of꞉> 
+3000M
+clj꞉datomic-01.filters-and-as-of꞉> 
+; Evaluating file: seed.clj
+#<promise$settable_future$reify__12002@17e0d440: 
+  {:db-before datomic.db.Db@d9e3460b,
+   :db-after datomic.db.Db@d6813098,
+   :tx-data
+   [#datom[13194139534330 50 #inst "2024-05-06T01:44:52.472-00:00" 13194139534330 true] #datom[17592186045420 82 1 13194139534330 true] #datom[17592186045422 82 1 13194139534330 true] #datom[17592186045425 82 1 13194139534330 true] #datom[17592186045426 82 1 13194139534330 true]],
+   :tempids
+   {-9223300668110598068 17592186045420,
+    -9223300668110598067 17592186045422,
+    -9223300668110598066 17592186045425,
+    -9223300668110598065 17592186045426}}>
+clj꞉datomic-01.seed꞉> 
+; Evaluating file: filters_and_as_of.clj
+; 
+; ; clj  datomic-01.filters-and-as-of 
+; Execution error (NullPointerException) at datomic.db/as-of-t (db.clj:2036).
+; Cannot invoke "java.lang.Number.longValue()" because "x" is null
+; Evaluation of file filters_and_as_of.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉datomic-01.filters-and-as-of꞉> 
+; Evaluating file: seed.clj
+#<promise$settable_future$reify__12002@43c74c71: 
+  {:db-before datomic.db.Db@4b0354b3,
+   :db-after datomic.db.Db@ddbfd8cd,
+   :tx-data
+   [#datom[13194139534330 50 #inst "2024-05-06T01:45:11.716-00:00" 13194139534330 true] #datom[17592186045420 82 1 13194139534330 true] #datom[17592186045422 82 1 13194139534330 true] #datom[17592186045425 82 1 13194139534330 true] #datom[17592186045426 82 1 13194139534330 true]],
+   :tempids
+   {-9223300668110598033 17592186045420,
+    -9223300668110598032 17592186045422,
+    -9223300668110598031 17592186045425,
+    -9223300668110598030 17592186045426}}>
+clj꞉datomic-01.seed꞉> 
+; Evaluating file: filters_and_as_of.clj
+; 
+; ; clj  datomic-01.filters-and-as-of 
+; Execution error (NullPointerException) at datomic.db/as-of-t (db.clj:2036).
+; Cannot invoke "java.lang.Number.longValue()" because "x" is null
+; Evaluation of file filters_and_as_of.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉datomic-01.filters-and-as-of꞉> 
+; Execution error (ClassCastException) at datomic.api/history (api.clj:129).
+; class datomic.peer.Connection cannot be cast to class datomic.Database (datomic.peer.Connection and datomic.Database are in unnamed module of loader 'app')
+clj꞉datomic-01.filters-and-as-of꞉> 
+; Execution error (ClassCastException) at datomic.api/history (api.clj:129).
+; class datomic.peer.Connection cannot be cast to class datomic.Database (datomic.peer.Connection and datomic.Database are in unnamed module of loader 'app')
+clj꞉datomic-01.filters-and-as-of꞉> 
+#'datomic-01.filters-and-as-of/conn
+clj꞉datomic-01.filters-and-as-of꞉> 
+[]
+clj꞉datomic-01.filters-and-as-of꞉> 
+[[{:product/id #uuid "f115e1b0-ebf9-430a-b240-09d62ee96d70",
+   :product/visualizations 1,
+   :product/price 1000M,
+   :product/stock 10,
+   :product/category #:db{:id 17592186045421},
+   :product/slug "computer",
+   :product/tags ["gaming" "work"],
+   :db/id 17592186045420,
+   :product/name "Computer"}]
+ [{:product/id #uuid "8881a2b1-1f7f-4fe5-830c-14120826cb45",
+   :product/visualizations 1,
+   :product/price 100M,
+   :product/stock 5,
+   :product/category #:db{:id 17592186045423},
+   :product/slug "t-shirt",
+   :product/tags ["casual" "gym" "workout"],
+   :db/id 17592186045422,
+   :product/name "T-shirt"}]
+ [{:product/id #uuid "ed195106-2d94-41ea-9e2f-459bf6f70b62",
+   :product/visualizations 1,
+   :product/price 1000M,
+   :product/stock 7,
+   :product/category #:db{:id 17592186045421},
+   :product/slug "tablet",
+   :product/tags ["communication" "gaming" "work"],
+   :db/id 17592186045425,
+   :product/name "Tablet"}]
+ [{:product/id #uuid "247e5c76-3ab5-4647-87dd-73a8bda2c727",
+   :product/visualizations 1,
+   :product/price 2800M,
+   :product/stock 8,
+   :product/category #:db{:id 17592186045423},
+   :product/slug "smartwatch",
+   :product/tags ["gym" "health" "workout"],
+   :db/id 17592186045426,
+   :product/name "Smartwatch"}]
+ [{:product/id #uuid "3c2f57c0-8690-4072-bb0f-45df6b18b6e8",
+   :product/variations
+   [{:db/id 17592186045430,
+     :variation/id #uuid "53a17e5e-d508-4a13-93bb-299c8c2a6242",
+     :variation/name "Plus",
+     :variation/price 1500M}],
+   :product/price 600M,
+   :product/stock 8,
+   :product/category #:db{:id 17592186045421},
+   :product/slug "iphone",
+   :product/tags ["communication" "gaming" "gym" "health" "work" "workout"],
+   :db/id 17592186045431,
+   :product/name "iPhone"}]]
+clj꞉datomic-01.filters-and-as-of꞉> 
+[]
+clj꞉datomic-01.filters-and-as-of꞉> 
+; Execution error (ClassCastException) at datomic.api/history (api.clj:129).
+; class datomic.peer.Connection cannot be cast to class datomic.Database (datomic.peer.Connection and datomic.Database are in unnamed module of loader 'app')
+clj꞉datomic-01.filters-and-as-of꞉> 
+[]
+clj꞉datomic-01.filters-and-as-of꞉> 
+; Execution error (IllegalStateException) at datomic.pull/pull* (pull.clj:366).
+; Can't pull from history
+clj꞉datomic-01.filters-and-as-of꞉> 
+#{[17592186045427]}
+clj꞉datomic-01.filters-and-as-of꞉> 
+17592186045427
+clj꞉datomic-01.filters-and-as-of꞉> 
+3000M
+clj꞉datomic-01.filters-and-as-of꞉> 
+#{[13194139534324 2800M #inst "2024-05-06T01:45:11.674-00:00"] [13194139534325 600M #inst "2024-05-06T01:45:11.680-00:00"] [13194139534315 100M #inst "2024-05-06T01:45:11.657-00:00"] [13194139534315 1000M #inst "2024-05-06T01:45:11.657-00:00"] [13194139534320 1000M #inst "2024-05-06T01:45:11.666-00:00"] [13194139534320 2700M #inst "2024-05-06T01:45:11.666-00:00"]}
+clj꞉datomic-01.filters-and-as-of꞉> 
+#{[#uuid "247e5c76-3ab5-4647-87dd-73a8bda2c727" 13194139534320 2700M #inst "2024-05-06T01:45:11.666-00:00"] [#uuid "8881a2b1-1f7f-4fe5-830c-14120826cb45" 13194139534315 100M #inst "2024-05-06T01:45:11.657-00:00"] [#uuid "3c2f57c0-8690-4072-bb0f-45df6b18b6e8" 13194139534325 600M #inst "2024-05-06T01:45:11.680-00:00"] [#uuid "ed195106-2d94-41ea-9e2f-459bf6f70b62" 13194139534320 1000M #inst "2024-05-06T01:45:11.666-00:00"] [#uuid "f115e1b0-ebf9-430a-b240-09d62ee96d70" 13194139534315 1000M #inst "2024-05-06T01:45:11.657-00:00"] [#uuid "247e5c76-3ab5-4647-87dd-73a8bda2c727" 13194139534324 2800M #inst "2024-05-06T01:45:11.674-00:00"]}
+clj꞉datomic-01.filters-and-as-of꞉> 
+[{:id #uuid "247e5c76-3ab5-4647-87dd-73a8bda2c727",
+  :tx 13194139534320,
+  :price 2700M,
+  :instant #inst "2024-05-06T01:45:11.666-00:00"}
+ {:id #uuid "8881a2b1-1f7f-4fe5-830c-14120826cb45",
+  :tx 13194139534315,
+  :price 100M,
+  :instant #inst "2024-05-06T01:45:11.657-00:00"}
+ {:id #uuid "3c2f57c0-8690-4072-bb0f-45df6b18b6e8",
+  :tx 13194139534325,
+  :price 600M,
+  :instant #inst "2024-05-06T01:45:11.680-00:00"}
+ {:id #uuid "ed195106-2d94-41ea-9e2f-459bf6f70b62",
+  :tx 13194139534320,
+  :price 1000M,
+  :instant #inst "2024-05-06T01:45:11.666-00:00"}
+ {:id #uuid "f115e1b0-ebf9-430a-b240-09d62ee96d70",
+  :tx 13194139534315,
+  :price 1000M,
+  :instant #inst "2024-05-06T01:45:11.657-00:00"}
+ {:id #uuid "247e5c76-3ab5-4647-87dd-73a8bda2c727",
+  :tx 13194139534324,
+  :price 2800M,
+  :instant #inst "2024-05-06T01:45:11.674-00:00"}]
+clj꞉datomic-01.filters-and-as-of꞉> 
+[{:id #uuid "ed195106-2d94-41ea-9e2f-459bf6f70b62", :price 1000M, :instant #inst "2024-05-06T01:45:11.666-00:00"}
+ {:id #uuid "247e5c76-3ab5-4647-87dd-73a8bda2c727", :price 2800M, :instant #inst "2024-05-06T01:45:11.674-00:00"}
+ {:id #uuid "3c2f57c0-8690-4072-bb0f-45df6b18b6e8", :price 600M, :instant #inst "2024-05-06T01:45:11.680-00:00"}
+ {:id #uuid "f115e1b0-ebf9-430a-b240-09d62ee96d70", :price 1000M, :instant #inst "2024-05-06T01:45:11.657-00:00"}
+ {:id #uuid "8881a2b1-1f7f-4fe5-830c-14120826cb45", :price 100M, :instant #inst "2024-05-06T01:45:11.657-00:00"}
+ {:id #uuid "247e5c76-3ab5-4647-87dd-73a8bda2c727", :price 2700M, :instant #inst "2024-05-06T01:45:11.666-00:00"}]
+clj꞉datomic-01.filters-and-as-of꞉> 
+[{:id #uuid "ed195106-2d94-41ea-9e2f-459bf6f70b62", :price 1000M, :instant #inst "2024-05-06T01:45:11.666-00:00"}
+ {:id #uuid "247e5c76-3ab5-4647-87dd-73a8bda2c727", :price 2800M, :instant #inst "2024-05-06T01:45:11.674-00:00"}
+ {:id #uuid "3c2f57c0-8690-4072-bb0f-45df6b18b6e8", :price 600M, :instant #inst "2024-05-06T01:45:11.680-00:00"}
+ {:id #uuid "f115e1b0-ebf9-430a-b240-09d62ee96d70", :price 1000M, :instant #inst "2024-05-06T01:45:11.657-00:00"}
+ {:id #uuid "8881a2b1-1f7f-4fe5-830c-14120826cb45", :price 100M, :instant #inst "2024-05-06T01:45:11.657-00:00"}
+ {:id #uuid "247e5c76-3ab5-4647-87dd-73a8bda2c727", :price 2700M, :instant #inst "2024-05-06T01:45:11.666-00:00"}]
+clj꞉datomic-01.filters-and-as-of꞉> 
+[{:id #uuid "3c2f57c0-8690-4072-bb0f-45df6b18b6e8", :price 600M}]
+clj꞉datomic-01.filters-and-as-of꞉> 
+[{:id #uuid "247e5c76-3ab5-4647-87dd-73a8bda2c727", :price 2800M}
+ {:id #uuid "ed195106-2d94-41ea-9e2f-459bf6f70b62", :price 1000M}
+ {:id #uuid "3c2f57c0-8690-4072-bb0f-45df6b18b6e8", :price 600M}]
+clj꞉datomic-01.filters-and-as-of꞉> 
+[{:id #uuid "247e5c76-3ab5-4647-87dd-73a8bda2c727", :price 2800M}
+ {:id #uuid "ed195106-2d94-41ea-9e2f-459bf6f70b62", :price 1000M}
+ {:id #uuid "3c2f57c0-8690-4072-bb0f-45df6b18b6e8", :price 600M}]
+clj꞉datomic-01.filters-and-as-of꞉> 
+; Evaluating file: db.clj
+#'datomic-01.db/register-schemas!
+clj꞉datomic-01.db꞉> 
+; Evaluating file: seed.clj
+#<promise$settable_future$reify__12002@1d1bda22: 
+  {:db-before datomic.db.Db@860318ce,
+   :db-after datomic.db.Db@4a8c1b68,
+   :tx-data
+   [#datom[13194139534330 50 #inst "2024-05-06T03:41:00.896-00:00" 13194139534330 true] #datom[17592186045420 82 1 13194139534330 true] #datom[17592186045422 82 1 13194139534330 true] #datom[17592186045425 82 1 13194139534330 true] #datom[17592186045426 82 1 13194139534330 true]],
+   :tempids
+   {-9223300668110597998 17592186045420,
+    -9223300668110597997 17592186045422,
+    -9223300668110597996 17592186045425,
+    -9223300668110597995 17592186045426}}>
+clj꞉datomic-01.seed꞉> 
+; Evaluating file: filters_and_as_of.clj
+[{:id #uuid "4c0ab7f4-193b-4c37-9359-31d3dc4ad4c6", :price 1000M}
+ {:id #uuid "68584a21-35c3-48b8-8ffa-7d917d7d3506", :price 600M}
+ {:id #uuid "a6fce74f-2801-4c67-9632-8b2bcbe528c9", :price 1000M}
+ {:id #uuid "05340a57-6780-48a4-b9e2-3a4088d2b761", :price 2800M}
+ {:id #uuid "cccaaadc-192e-4f9e-b5a9-e185a83258c1", :price 100M}]
+clj꞉datomic-01.filters-and-as-of꞉> 
+; Evaluating file: query_and_pull.clj
+#:db{:id nil}
+clj꞉datomic-01.query-and-pull꞉> 
+[[{:product/id #uuid "4c0ab7f4-193b-4c37-9359-31d3dc4ad4c6",
+   :product/visualizations 1,
+   :product/price 1000M,
+   :product/stock 10,
+   :product/category
+   {:db/id 17592186045421, :category/name "electronics", :category/id #uuid "1d4cdc44-283b-4e9f-9a54-f4935d14dc09"},
+   :product/slug "computer",
+   :product/tags ["gaming" "work"],
+   :db/id 17592186045420,
+   :product/name "Computer"}]
+ [{:product/id #uuid "cccaaadc-192e-4f9e-b5a9-e185a83258c1",
+   :product/visualizations 1,
+   :product/price 100M,
+   :product/stock 5,
+   :product/category
+   {:db/id 17592186045423, :category/name "sports", :category/id #uuid "ed15059f-9a24-485d-a0b7-99ca2b0de3e5"},
+   :product/slug "t-shirt",
+   :product/tags ["casual" "gym" "workout"],
+   :db/id 17592186045422,
+   :product/name "T-shirt"}]
+ [{:product/id #uuid "a6fce74f-2801-4c67-9632-8b2bcbe528c9",
+   :product/visualizations 1,
+   :product/price 1000M,
+   :product/stock 7,
+   :product/category
+   {:db/id 17592186045421, :category/name "electronics", :category/id #uuid "1d4cdc44-283b-4e9f-9a54-f4935d14dc09"},
+   :product/slug "tablet",
+   :product/tags ["communication" "gaming" "work"],
+   :db/id 17592186045425,
+   :product/name "Tablet"}]
+ [{:product/id #uuid "05340a57-6780-48a4-b9e2-3a4088d2b761",
+   :product/visualizations 1,
+   :product/price 2800M,
+   :product/stock 8,
+   :product/category
+   {:db/id 17592186045423, :category/name "sports", :category/id #uuid "ed15059f-9a24-485d-a0b7-99ca2b0de3e5"},
+   :product/slug "smartwatch",
+   :product/tags ["gym" "health" "workout"],
+   :db/id 17592186045426,
+   :product/name "Smartwatch"}]
+ [{:product/id #uuid "68584a21-35c3-48b8-8ffa-7d917d7d3506",
+   :product/variations
+   [{:db/id 17592186045430,
+     :variation/id #uuid "4beacbb3-4e53-4ff7-8d30-d6cf6e056696",
+     :variation/name "Plus",
+     :variation/price 1500M}],
+   :product/price 600M,
+   :product/stock 8,
+   :product/category
+   {:db/id 17592186045421, :category/name "electronics", :category/id #uuid "1d4cdc44-283b-4e9f-9a54-f4935d14dc09"},
+   :product/slug "iphone",
+   :product/tags ["communication" "gaming" "gym" "health" "work" "workout"],
+   :db/id 17592186045431,
+   :product/name "iPhone"}]]
+clj꞉datomic-01.query-and-pull꞉> 
+; nREPL Connection was closed

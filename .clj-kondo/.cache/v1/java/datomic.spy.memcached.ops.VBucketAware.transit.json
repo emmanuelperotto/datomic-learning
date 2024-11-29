@@ -1,0 +1,1 @@
+["^ ","~:members",["^ ","setVBucket",["~#set",[["^ ","~:flags",["^2",["~:method","~:public"]]]]],"getVBucket",["^2",[["^ ","^3",["^2",["^4","^5"]]]]],"getNotMyVbucketNodes",["^2",[["^ ","^3",["^2",["^4","^5"]]]]],"addNotMyVbucketNode",["^2",[["^ ","^3",["^2",["^4","^5"]]]]],"setNotMyVbucketNodes",["^2",[["^ ","^3",["^2",["^4","^5"]]]]]]]
